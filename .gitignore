@@ -1,0 +1,6 @@
+# node dependencies
+node_modules/
+
+# dotenv variable files
+.env
+.env.development.local

@@ -1,0 +1,23 @@
+{
+  "name": "markdown-blog",
+  "version": "1.0.0",
+  "description": "Initial express app",
+  "main": "index.js",
+  "scripts": {
+    "dev-serve": "nodemon server.js",
+    "test": "node test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongoose": "^8.14.0",
+    "mysql2": "^3.14.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
