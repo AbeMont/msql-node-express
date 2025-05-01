@@ -1,16 +1,16 @@
 <div class="form-group">
     <label for="title">Title</label>
-    <input class="form-control" type="text" name="title" id="title" required/>
+    <input class="form-control" type="text" name="title" id="title" value="<%= article.title %>" required/>
 </div>
 
 <div class="form-group">
     <label for="desc_content">Description</label>
-    <textarea class="form-control" name="desc_content" id="desc_content" required></textarea>
+    <textarea class="form-control" name="desc_content" id="desc_content" required><%= article.desc_content %></textarea>
 </div>
 
 <div class="form-group">
     <label for="content">Markdown</label>
-    <textarea class="form-control" name="content" id="content" required></textarea>
+    <textarea class="form-control" name="content" id="content" required><%= article.content %></textarea>
 </div>
 
 <a href="/" class="btn btn-secondary">Cancel</a>

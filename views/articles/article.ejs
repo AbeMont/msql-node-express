@@ -14,7 +14,7 @@
             <%= article.content %>
         </div>
         <a href="/" class="btn btn-secondary">All Articles</a>
-        <a href="/articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
+        <a href="/articles/editArticle/<%= article.id %>" class="btn btn-info">Edit</a>
         <form method="POST" action="/articles/deleteArticle/<%= article.id %>?_method=DELETE" class="d-inline">
             <button type="submit" class="btn btn-danger">Delete</button>
         </form>

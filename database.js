@@ -32,4 +32,13 @@ async function deleteById(id) {
     await connection.execute('DELETE FROM articles WHERE id = ? LIMIT 1', [id]);
 }
 
-module.exports = { getArticles, createArticle, deleteById, getArticleById, connection };
+async function editArticle(article, articleId) {
+    await connection.execute(`UPDATE articles SET 
+        title = ?, 
+        desc_content = ?, 
+        content = ? 
+        WHERE id = ? LIMIT 1`, 
+    [article.title, article.desc_content, article.content, articleId]);
+}
+
+module.exports = { getArticles, createArticle, deleteById, getArticleById, editArticle, connection };
