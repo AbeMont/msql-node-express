@@ -28,4 +28,8 @@ async function createArticle(title, desc_content, content){
     return article;
 }
 
-module.exports = { getArticles, createArticle, getArticleById, connection };
+async function deleteById(id) {
+    await connection.execute('DELETE FROM articles WHERE id = ? LIMIT 1', [id]);
+}
+
+module.exports = { getArticles, createArticle, deleteById, getArticleById, connection };

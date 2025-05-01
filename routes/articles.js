@@ -1,5 +1,5 @@
 const express = require('express');
-const { createArticle, getArticleById } = require('./../database');
+const { createArticle, getArticleById, deleteById } = require('./../database');
 const router = express.Router();
 
 router.get('/new', (req, res)=>{
@@ -15,6 +15,11 @@ router.post('/createArticle', async (req, res)=>{
 router.get('/article/:id',async (req, res)=>{
     const article = await getArticleById(req.params.id);
     res.render('articles/article', { article: article });
+});
+
+router.delete('/deleteArticle/:id', async (req, res) => {
+    await deleteById(req.params.id);
+    res.redirect('/');
 });
 
 router.get('/test', (req, res)=>{
