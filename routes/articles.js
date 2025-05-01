@@ -1,8 +1,6 @@
 const express = require('express');
-const { connection, createArticle } = require('./../database');
+const { createArticle, getArticleById } = require('./../database');
 const router = express.Router();
-
-// express.json();
 
 router.get('/new', (req, res)=>{
     res.render('articles/new');
@@ -11,11 +9,12 @@ router.get('/new', (req, res)=>{
 router.post('/createArticle', async (req, res)=>{
     const { title, desc_content, content } = req.body;
     const createdArticle = await createArticle(title, desc_content, content);
-    res.status(200).send(createdArticle);
+    res.redirect(`article/${createdArticle.insertId}`);
 });
 
-router.get('article/:id', (req, res)=>{
-
+router.get('/article/:id',async (req, res)=>{
+    const article = await getArticleById(req.params.id);
+    res.render('articles/article', { article: article });
 });
 
 router.get('/test', (req, res)=>{
